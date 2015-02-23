@@ -18,6 +18,7 @@ void setup() {
 
 void loop() {
   if(millis() - lastClick > TIMEOUT){
+    Bean.setScratchNumber(1, maxAccel);
     Bean.sleep(MAX_BEAN_SLEEP);
     return;
   }
@@ -36,6 +37,5 @@ void loop() {
 
   if(localMaxAccel > maxAccel){
     maxAccel = localMaxAccel;
-    Bean.setScratchNumber(1, maxAccel);
   }
 }
